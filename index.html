@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="BAZAR — تطبيق إدارة المتاجر والمخزون ونقاط البيع ونظام التوصيل بنمط العمل دون اتصال والمزامنة السحابية.">
+  <title>BAZAR — منظومة إدارة المتاجر</title>
+  <link rel="icon" href="assets/app-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="#home" aria-label="BAZAR - الرئيسية" data-i18n-aria-label="homeLabel">
+        <img class="brand-icon" src="assets/app-icon.png" alt="BAZAR" width="40" height="40" data-i18n-alt="iconAlt">
+        <div class="brand-text">
+          <span class="brand-name">BAZAR</span>
+          <span class="brand-sub" data-i18n="brandTagline">إدارة المتاجر</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="التنقل الرئيسي" data-i18n-aria-label="mainNavigation">
+        <a href="#features" data-i18n="navFeatures">المزايا</a>
+        <a href="#screens" data-i18n="navScreens">الواجهات الفعلية</a>
+        <a href="#roles" data-i18n="navAudience">الأدوار</a>
+        <a href="#workflow" data-i18n="navWorkflow">آلية العمل</a>
+        <a href="#technology" data-i18n="navTechnology">التعريف التقني</a>
+        <a href="#faq" data-i18n="navFaq">الأسئلة الشائعة</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="language-picker">
+          <span class="visually-hidden" data-i18n="languageLabel">لغة الموقع</span>
+          <select id="language-select" aria-label="لغة الموقع" data-i18n-aria-label="languageLabel">
+            <option value="ar">العربية</option>
+            <option value="ku">Kurdî</option>
+            <option value="en">English</option>
+          </select>
+        </label>
+
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="تفعيل الوضع الداكن">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label" data-i18n="darkMode">داكن</span>
+        </button>
+
+        <a class="btn-download-sm" href="#download">
+          <span data-i18n="navDownload">تنزيل التطبيق</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="badge-dot"></span>
+            <span data-i18n="heroEyebrow">تطبيق Android متكامل لإدارة المتجر</span>
+          </div>
+
+          <h1 class="hero-title" data-i18n="heroTitle">منظومة إدارية لمتجرك<br><span class="highlight">ببساطة واحترافية.</span></h1>
+
+          <p class="hero-description" data-i18n="heroText">
+            إدارة المخزون، نقطة البيع بالباركود، الفواتير، أسعار الصرف، والمصاريف اليومية — مع الربط بين صاحب المتجر والزبون ومركز التوصيل.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#download">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span data-i18n="heroDownload">تحميل نسخة APK</span>
+            </a>
+            <a class="btn btn-outline" href="#screens">
+              <span data-i18n="heroExplore">معاينة واجهات Jetpack Compose</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="heroMetaOffline">عمل كامل بدون اتصال (SQLite Engine)</span>
+            </div>
+            <div class="meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span data-i18n="heroMetaSync">مزامنة سحابية حية (Firebase Cloud)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO APP SHOWCASE MOCKUP -->
+        <div class="hero-visual">
+          <div class="app-card-preview">
+            <div class="app-card-header">
+              <img class="app-card-icon" src="assets/app-icon.png" alt="BAZAR App Icon" width="64" height="64" data-i18n-alt="iconAlt">
+              <div class="app-card-title">
+                <h3>BAZAR Android</h3>
+                <span data-i18n="realIconBadge">أيقونة التطبيق الرسمية</span>
+              </div>
+              <span class="status-badge" data-i18n="appStatusReady">جاهز للعمل</span>
+            </div>
+
+            <div class="app-stats-demo">
+              <div class="stat-pill">
+                <span class="stat-label" data-i18n="statLabelExchange">سعر الصرف اليومي</span>
+                <span class="stat-val">1 USD = 15,000 SYP</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-label" data-i18n="statLabelPos">نقطة البيع الكاميرا</span>
+                <span class="stat-val" data-i18n="statValScanner">مسح ML Kit ⚡</span>
+              </div>
+              <div class="stat-pill">
+                <span class="stat-label" data-i18n="statLabelMode">نمط التخزين</span>
+                <span class="stat-val" data-i18n="statValOffline">محلي + سحابي</span>
+              </div>
+            </div>
+
+            <div class="app-preview-footer">
+              <div class="role-chips">
+                <span class="chip chip-owner" data-i18n="roleChipOwner">المتجر</span>
+                <span class="chip chip-customer" data-i18n="roleChipCustomer">الزبون</span>
+                <span class="chip chip-delivery" data-i18n="roleChipDelivery">التوصيل</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT STRIP -->
+    <section class="trust-strip">
+      <div class="container strip-grid">
+        <div class="strip-item">
+          <div class="strip-num">01</div>
+          <div class="strip-text">
+            <strong data-i18n="trust1Title">إدارة المخزون</strong>
+            <span data-i18n="trust1Sub">تتبع الأصناف وتنبيهات النفاذ</span>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-num">02</div>
+          <div class="strip-text">
+            <strong data-i18n="trust2Title">نقطة البيع بالباركود</strong>
+            <span data-i18n="trust2Sub">مسح سريع عبر CameraX وML Kit</span>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-num">03</div>
+          <div class="strip-text">
+            <strong data-i18n="trust3Title">سعر الصرف والعملات</strong>
+            <span data-i18n="trust3Sub">حساب دقيق بالدولار والليرة</span>
+          </div>
+        </div>
+        <div class="strip-item">
+          <div class="strip-num">04</div>
+          <div class="strip-text">
+            <strong data-i18n="trust4Title">التقارير والمصاريف</strong>
+            <span data-i18n="trust4Sub">تصدير تقارير Excel فورية</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP SCREENS SHOWCASE (BASED ON ACTIVE COMPOSE SCREENS) -->
+    <section class="section section-alt" id="screens">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="screensEyebrow">معاينات مستندة إلى الشاشات الفعلية</span>
+          <h2 class="section-title" data-i18n="screensTitle">واجهات BAZAR كما تظهر في التطبيق</h2>
+          <p class="section-desc" data-i18n="screensIntro">نماذج توضيحية مبنية على مكونات Compose ومسارات التنقل الفعلية؛ الأسماء والأرقام المعروضة أمثلة وليست بيانات مباشرة من التطبيق.</p>
+        </div>
+
+        <div class="screens-showcase">
+          <div class="screen-tabs" role="tablist">
+            <button class="screen-tab active" data-target="screen-pos" role="tab" aria-selected="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M11 7h2M17 7h.01M7 11h2M17 11h.01M7 15h.01M11 15h6"/></svg>
+              <span data-i18n="tabPos">نقطة البيع</span>
+            </button>
+            <button class="screen-tab" data-target="screen-dashboard" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+              <span data-i18n="tabDashboard">رئيسية المتجر</span>
+            </button>
+            <button class="screen-tab" data-target="screen-customer" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9M9 21v-7h6v7"/></svg>
+              <span data-i18n="tabCustomer">متاجر الزبون</span>
+            </button>
+            <button class="screen-tab" data-target="screen-delivery" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <span data-i18n="tabDelivery">رئيسية التوصيل</span>
+            </button>
+          </div>
+
+          <div class="screen-panels">
+            <div class="screen-panel active" id="screen-pos" role="tabpanel">
+              <div class="panel-content">
+                <div class="panel-info">
+                  <span class="badge-accent" data-i18n="posBadge">المسار addlist/{barcode} · SalesScreen.kt</span>
+                  <h3 data-i18n="posTitle">شاشة نقطة البيع</h3>
+                  <p data-i18n="posDesc">تتبع المعاينة ترتيب الشاشة الفعلي: إجمالي السلة، أدوات البحث والإضافة، بطاقات المنتجات، ثم حفظ الفاتورة.</p>
+                  <ul class="panel-features">
+                    <li data-i18n="posFeat1">إجمالي الدولار وعدد المنتجات؛ يظهر طلب سعر الصرف عند عدم تحديده.</li>
+                    <li data-i18n="posFeat2">بحث وثلاثة إجراءات: مسح باركود، إضافة يدوية، ومسح السلة.</li>
+                    <li data-i18n="posFeat3">تعديل الكمية من تفاصيل المنتج؛ البطاقة نفسها تعرض التفاصيل والحذف.</li>
+                  </ul>
+                </div>
+
+                <div class="compose-phone-render mock-pos-screen">
+                  <div class="compose-top-bar">
+                    <span class="mock-icon" aria-hidden="true">‹</span>
+                    <span class="compose-title" data-i18n="mockPosTitle">نقطة البيع</span>
+                  </div>
+                  <div class="compose-card sales-header-card">
+                    <div class="sales-header-top">
+                      <div>
+                        <strong class="sales-screen-heading" data-i18n="mockProductsForSale">منتجات للبيع</strong>
+                        <div class="mock-subtle" data-i18n="mockNumberOfProducts">عدد المنتجات: 2</div>
+                      </div>
+                      <span class="mock-icon-bubble" aria-hidden="true">▤</span>
+                    </div>
+                    <div class="mock-total-row">
+                      <span class="mock-total-pill"><b>$</b><strong>20.50</strong></span>
+                      <span class="mock-rate-required" data-i18n="mockRateRequired">سعر الصرف مطلوب</span>
+                    </div>
+                  </div>
+                  <div class="compose-card sales-tools-card">
+                    <div class="search-input-field"><span aria-hidden="true">⌕</span><span data-i18n="mockSearchProduct">بحث عن منتج</span></div>
+                    <div class="tools-btn-row">
+                      <span class="tool-btn btn-scan"><b aria-hidden="true">▦</b><span data-i18n="mockScan">مسح</span></span>
+                      <span class="tool-btn btn-add"><b aria-hidden="true">＋</b><span data-i18n="mockAdd">إضافة</span></span>
+                      <span class="tool-btn btn-clear"><b aria-hidden="true">×</b><span data-i18n="mockClear">مسح الكل</span></span>
+                    </div>
+                  </div>
+                  <div class="compose-card product-sale-card">
+                    <span class="sale-status-dot sale-status-ok" aria-hidden="true"></span>
+                    <div class="sale-product-main">
+                      <strong data-i18n="mockProductOlive">زيت زيتون (1 لتر)</strong>
+                      <span data-i18n="mockSaleLineOlive">2 × $8.00 · متوفر: 15</span>
+                    </div>
+                    <strong class="product-sale-price">$16.00</strong>
+                    <span class="mock-action-icon" aria-hidden="true">ⓘ</span>
+                    <span class="mock-action-icon mock-delete" aria-hidden="true">×</span>
+                  </div>
+                  <div class="compose-card product-sale-card">
+                    <span class="sale-status-dot sale-status-low" aria-hidden="true"></span>
+                    <div class="sale-product-main">
+                      <strong data-i18n="mockProductRice">أرز أبيض (5 كغ)</strong>
+                      <span data-i18n="mockSaleLineRice">1 × $4.50 · متوفر: 8</span>
+                    </div>
+                    <strong class="product-sale-price">$4.50</strong>
+                    <span class="mock-action-icon" aria-hidden="true">ⓘ</span>
+                    <span class="mock-action-icon mock-delete" aria-hidden="true">×</span>
+                  </div>
+                  <span class="compose-finalize-btn"><span aria-hidden="true">▤</span><span data-i18n="uiCheckoutBtn">إتمام العملية وحفظ الفاتورة</span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-panel" id="screen-dashboard" role="tabpanel">
+              <div class="panel-content">
+                <div class="panel-info">
+                  <span class="badge-accent" data-i18n="dashBadge">المسار HomeScreen · StoreHomeScreen.kt</span>
+                  <h3 data-i18n="dashTitle">الرئيسية لصاحب المتجر</h3>
+                  <p data-i18n="dashDesc">تظهر الشاشة الرئيسية النشطة رأس المتجر، خمسة إجراءات، سعر الصرف، البحث، المنتجات الأفقية، ومؤشر الطلبات عند وجودها.</p>
+                  <ul class="panel-features">
+                    <li data-i18n="dashFeat1">الإجراءات الخمسة: مسح، إضافة، تحديث، تقارير، وطلبات.</li>
+                    <li data-i18n="dashFeat2">سعر صرف محلي؛ عند عدم تحديده تعرض الشاشة طلب إدخاله.</li>
+                    <li data-i18n="dashFeat3">بحث سريع وقائمة منتجات أفقية مع مؤشر المخزون داخل البطاقة.</li>
+                  </ul>
+                </div>
+
+                <div class="compose-phone-render mock-store-screen">
+                  <div class="compose-store-header">
+                    <div class="store-title-wrap">
+                      <strong data-i18n="mockStoreName">متجر BAZAR</strong>
+                      <span class="store-title-underline"></span>
+                    </div>
+                    <span class="mock-round-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg></span>
+                    <span class="mock-round-icon mock-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></span>
+                  </div>
+                  <div class="compose-card mock-actions-card">
+                    <strong data-i18n="mockQuickActionsTitle">الإجراءات السريعة</strong>
+                    <div class="quick-actions-grid">
+                      <div class="action-card"><span class="action-icon action-indigo" aria-hidden="true">▦</span><span data-i18n="mockScan">مسح</span></div>
+                      <div class="action-card"><span class="action-icon action-cyan" aria-hidden="true">＋</span><span data-i18n="mockAdd">إضافة</span></div>
+                      <div class="action-card"><span class="action-icon action-green" aria-hidden="true">↻</span><span data-i18n="mockRefresh">تحديث</span></div>
+                      <div class="action-card"><span class="action-icon action-amber" aria-hidden="true">▥</span><span data-i18n="mockReports">تقارير</span></div>
+                      <div class="action-card"><span class="action-icon action-pink" aria-hidden="true">▤</span><span data-i18n="mockRequests">طلبات</span></div>
+                    </div>
+                  </div>
+                  <div class="compose-card compact-exchange-card">
+                    <div class="exchange-line">
+                      <span class="exchange-title" data-i18n="uiExchangeTitle">سعر الصرف</span>
+                      <span class="exchange-rate-text" data-i18n="mockRateUnset">غير محدد</span>
+                    </div>
+                    <span class="exchange-edit-hint" data-i18n="mockRateRequired">سعر الصرف مطلوب</span>
+                  </div>
+                  <div class="compose-search-bar">
+                    <span data-i18n="mockStoreSearch">بحث سريع...</span><span aria-hidden="true">⌕　▦</span>
+                  </div>
+                  <div class="compose-card mock-products-section">
+                    <div class="mock-section-heading">
+                      <strong data-i18n="mockProducts">المنتجات</strong>
+                      <span data-i18n="mockViewAll">عرض الكل (8)</span>
+                    </div>
+                    <div class="mock-product-row">
+                      <div class="mock-product-card">
+                        <div class="mock-product-image"><span class="mock-stock-pill mock-stock-good">12</span><span aria-hidden="true">▣</span></div>
+                        <strong data-i18n="mockProductOlive">زيت زيتون (1 لتر)</strong>
+                        <span class="mock-rate-note" data-i18n="mockRateRequired">سعر الصرف مطلوب</span>
+                        <span class="mock-product-price">$8.00</span>
+                      </div>
+                      <div class="mock-product-card">
+                        <div class="mock-product-image"><span class="mock-stock-pill mock-stock-low" data-i18n="mockStockLow">3</span><span aria-hidden="true">▣</span></div>
+                        <strong data-i18n="mockProductRice">أرز أبيض (5 كغ)</strong>
+                        <span class="mock-rate-note" data-i18n="mockRateRequired">سعر الصرف مطلوب</span>
+                        <span class="mock-product-price">$4.50</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mock-orders-indicator"><span aria-hidden="true">▤</span><span data-i18n="mockOrdersIndicator">الطلبات: 2</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-panel" id="screen-customer" role="tabpanel">
+              <div class="panel-content">
+                <div class="panel-info">
+                  <span class="badge-accent" data-i18n="custBadge">المسار customer_home · CustomerStoresScreen.kt</span>
+                  <h3 data-i18n="custTitle">تصفح المتاجر للزبون</h3>
+                  <p data-i18n="custDesc">يفتح `customer_home` أولاً على قائمة المتاجر؛ البحث والملف والطلبات تبويبات منفصلة، وسلة الشراء route آخر بعد اختيار متجر.</p>
+                  <ul class="panel-features">
+                    <li data-i18n="custFeat1">بحث وفلاتر أقسام وبطاقات متاجر بحالة الاتصال والتقييم.</li>
+                    <li data-i18n="custFeat2">حالات تحميل وفراغ وخطأ ضمن قائمة المتاجر.</li>
+                    <li data-i18n="custFeat3">شريط تنقل سفلي بأربعة عناصر؛ السلة ليست ضمن هذه الشاشة.</li>
+                  </ul>
+                </div>
+
+                <div class="compose-phone-render mock-customer-screen">
+                  <div class="compose-top-bar">
+                    <span class="compose-title" data-i18n="mockAvailableStores">المتاجر المتاحة</span>
+                    <span class="mock-round-icon mock-profile-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></span>
+                  </div>
+                  <div class="compose-search-bar">
+                    <span data-i18n="mockCustomerSearch">ابحث عن متجر...</span><span aria-hidden="true">⌕　▦</span>
+                  </div>
+                  <div class="mock-category-strip">
+                    <span class="mock-category-chip active" data-i18n="mockCategoryAll">الكل</span>
+                    <span class="mock-category-chip" data-i18n="mockCategoryGrocery">بقالة</span>
+                    <span class="mock-category-chip" data-i18n="mockCategoryRestaurants">مطاعم</span>
+                    <span class="mock-category-chip" data-i18n="mockCategorySweets">حلويات</span>
+                  </div>
+                  <div class="compose-card mock-store-card">
+                    <div class="mock-store-cover">
+                      <span class="mock-store-online" data-i18n="mockStoreOnline">نشط</span>
+                      <span class="mock-store-cover-art" aria-hidden="true">▧</span>
+                    </div>
+                    <div class="mock-store-details">
+                      <span class="mock-store-logo" aria-hidden="true">▣</span>
+                      <div class="mock-store-copy">
+                        <strong data-i18n="mockStoreName">متجر BAZAR</strong>
+                        <span data-i18n="mockStoreCategory">مواد غذائية</span>
+                      </div>
+                      <span class="mock-store-rating"><b>★</b> 4.8</span>
+                    </div>
+                  </div>
+                  <div class="compose-bottom-nav">
+                    <div class="nav-item active"><span aria-hidden="true">▣</span><span data-i18n="mockNavStores">المتاجر</span></div>
+                    <div class="nav-item"><span aria-hidden="true">⌕</span><span data-i18n="mockNavSearch">البحث</span></div>
+                    <div class="nav-item"><span aria-hidden="true">●</span><span data-i18n="mockNavProfile">الملف</span></div>
+                    <div class="nav-item"><span aria-hidden="true">◷</span><span data-i18n="mockNavOrders">الطلبات</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="screen-panel" id="screen-delivery" role="tabpanel">
+              <div class="panel-content">
+                <div class="panel-info">
+                  <span class="badge-accent" data-i18n="delivBadge">المسار delivery_home · DeliveryHomeScreen.kt</span>
+                  <h3 data-i18n="delivTitle">الرئيسية لمركز التوصيل</h3>
+                  <p data-i18n="delivDesc">بعد تسجيل الدخول يفتح التطبيق لوحة التوصيل، وتعرض الترحيب والإحصاءات وإجراءات الطلبات ونموذج بيانات المركز.</p>
+                  <ul class="panel-features">
+                    <li data-i18n="delivFeat1">ثلاث بطاقات: بانتظار الموافقة، مقبول، وتم التسليم.</li>
+                    <li data-i18n="delivFeat2">إجراءان يفتحان `delivery_center` لإدارة الطلبات.</li>
+                    <li data-i18n="delivFeat3">نموذج اسم المركز والمالك والهاتف والمدينة، مع حفظ/تحديث وخروج.</li>
+                  </ul>
+                </div>
+
+                <div class="compose-phone-render mock-delivery-screen">
+                  <div class="compose-top-bar">
+                    <span class="compose-title" data-i18n="mockDeliveryTitle">لوحة تحكم التوصيل</span>
+                  </div>
+                  <div class="compose-card mock-welcome-card">
+                    <strong data-i18n="mockDeliveryWelcome">مرحباً بك، مدير المركز</strong>
+                    <span data-i18n="mockDeliverySubtitle">هنا يمكنك إدارة طلبات التوصيل وتحديث حالتها.</span>
+                  </div>
+                  <div class="delivery-stats-row">
+                    <div class="deliv-stat-card">
+                      <span class="stat-num">3</span>
+                      <span class="stat-label" data-i18n="mockPending">بانتظار الموافقة</span>
+                    </div>
+                    <div class="deliv-stat-card">
+                      <span class="stat-num">5</span>
+                      <span class="stat-label" data-i18n="mockApproved">مقبول</span>
+                    </div>
+                    <div class="deliv-stat-card">
+                      <span class="stat-num">24</span>
+                      <span class="stat-label" data-i18n="mockDelivered">تم التسليم</span>
+                    </div>
+                  </div>
+                  <div class="mock-delivery-actions">
+                    <div class="compose-card mock-delivery-action">
+                      <span class="action-icon action-indigo" aria-hidden="true">◷</span>
+                      <strong data-i18n="mockPendingRequests">طلبات بانتظار الموافقة</strong>
+                    </div>
+                    <div class="compose-card mock-delivery-action">
+                      <span class="action-icon action-cyan" aria-hidden="true">▤</span>
+                      <strong data-i18n="mockManageRequests">إدارة جميع الطلبات</strong>
+                    </div>
+                  </div>
+                  <div class="compose-card mock-delivery-form">
+                    <strong data-i18n="mockDeliveryProfile">بيانات مركز التوصيل</strong>
+                    <span class="mock-form-field"><small data-i18n="mockCenterName">اسم المركز</small><b data-i18n="mockCenterExample">مركز المدينة</b></span>
+                    <span class="mock-form-field"><small data-i18n="mockOwnerName">اسم صاحب المركز</small><b data-i18n="mockOwnerExample">مدير المركز</b></span>
+                    <span class="mock-form-field"><small data-i18n="mockPhone">رقم الهاتف</small><b>+963 9XX XXX XXX</b></span>
+                    <span class="mock-form-field"><small data-i18n="mockCity">المدينة</small><b data-i18n="mockCityExample">دمشق</b></span>
+                    <span class="mock-save-button" data-i18n="mockSaveData">حفظ البيانات</span>
+                  </div>
+                  <span class="mock-signout" data-i18n="mockSignOut">تسجيل الخروج</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="featuresEyebrow">وظائف شاملة في مكان واحد</span>
+          <h2 class="section-title" data-i18n="featuresTitle">مميزات مصممة لاحتياجات المتجر اليومية</h2>
+          <p class="section-desc" data-i18n="featuresIntro">يجمع BAZAR بين السرعة الفائقة للتخزين المحلي والربط السحابي المباشر لخدمة كافة العمليات التجارية.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="card feature-card">
+            <div class="card-icon icon-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 data-i18n="feat1Title">إدارة المنتجات والمخزون</h3>
+            <p data-i18n="feat1Desc">إضافة وتعديل الأقسام والمنتجات، متابعة الكميات المتبقية، وتلقي تحذيرات عند انخفاض المخزون لمنع البيع فوق المتاح.</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="card-icon icon-teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h.01M11 7h2M17 7h.01M7 11h2M17 11h.01M7 15h.01M11 15h6"/></svg>
+            </div>
+            <h3 data-i18n="feat2Title">نقطة البيع والباركود السريع</h3>
+            <p data-i18n="feat2Desc">إدراج العناصر لسلة البيع بنقرة واحدة أو بمسح الباركود عبر الكاميرا باستخدام تقنيات Google ML Kit وإصدار الفواتير فوراً.</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="card-icon icon-gold">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3 data-i18n="feat3Title">مرونة سعر الصرف والعملات</h3>
+            <p data-i18n="feat3Desc">إمكانية تحديث سعر صرف الدولار مقابل الليرة السورية، وحساب قيم الفواتير والأرباح بالعملتين دون تضارب في التسعير.</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="card-icon icon-rose">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <h3 data-i18n="feat4Title">المصاريف وتصدير تقارير Excel</h3>
+            <p data-i18n="feat4Desc">تسجيل المصاريف اليومية والثرية، وتوليد تقارير مالية وتصديرها بصيغة ملفات Excel منسقة (Apache POI) مباشرة من الهاتف.</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="card-icon icon-teal">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 1 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            </div>
+            <h3 data-i18n="feat5Title">تصفح المتاجر وطلب الزبون</h3>
+            <p data-i18n="feat5Desc">واجهة تتيح للزبون تصفح المتاجر المتاحة عبر مرآة Firestore العامة، اختيار المنتجات، إنشاء الطلبات ومتابعة حالتها.</p>
+          </div>
+
+          <div class="card feature-card">
+            <div class="card-icon icon-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <h3 data-i18n="feat6Title">مركز التوصيل وتتبع الشحنات</h3>
+            <p data-i18n="feat6Desc">واجهة لكباتن التوصيل لمتابعة الطلبات المتاحة، استلام الشحنة، والتحديث الفوري لحالة التوصيل حتى التسليم للزبون.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROLES SECTION -->
+    <section class="section section-alt" id="roles">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="rolesEyebrow">منظومة مترابطة</span>
+          <h2 class="section-title" data-i18n="rolesTitle">مصمم ليخدم الأدوار الثلاثة في السوق</h2>
+          <p class="section-desc" data-i18n="rolesIntro">تكامل سلس بين صاحب المتجر والزبون ومركز التوصيل عبر قاعدة بيانات سحابية متناسقة.</p>
+        </div>
+
+        <div class="roles-grid">
+          <div class="card role-card">
+            <div class="role-badge badge-owner">01</div>
+            <h3 data-i18n="role1Title">صاحب المتجر (Store Owner)</h3>
+            <p data-i18n="role1Desc">تحكم كامل في المخزون، التسعير، نقطة البيع السريعة، الفواتير، متابعة المصاريف والتقارير المالية لتسهيل الإدارة اليومية.</p>
+          </div>
+
+          <div class="card role-card">
+            <div class="role-badge badge-customer">02</div>
+            <h3 data-i18n="role2Title">الزبون (Customer)</h3>
+            <p data-i18n="role2Desc">استكشاف المتاجر القريبة، البحث عن المنتجات بالاسم أو الصنف، تجميع سلة المشتريات ومتابعة حالة الطلب خطوة بخطوة.</p>
+          </div>
+
+          <div class="card role-card">
+            <div class="role-badge badge-delivery">03</div>
+            <h3 data-i18n="role3Title">مركز التوصيل (Delivery Center)</h3>
+            <p data-i18n="role3Desc">لوحة متابعة استلام الطلبات الجاهزة، التوجه للعنوان المطلوب، وتحديث حالة الشحنة فور تسليمها بنجاح.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW SECTION -->
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="workflowEyebrow">خطوات عمل سلسة</span>
+          <h2 class="section-title" data-i18n="workflowTitle">كيف تسير العمليات في التطبيق؟</h2>
+          <p class="section-desc" data-i18n="workflowIntro">مخطط تسلسلي بسيط يوضح تدفق البيانات والعمليات من الإدخال المحلي إلى التسليم النهائي.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="step-number">1</div>
+            <div class="step-body">
+              <h3 data-i18n="step1Title">تهيئة المتجر والمخزون</h3>
+              <p data-i18n="step1Desc">يضيف صاحب المتجر المنتجات والباركود وسعر الصرف اليومي. يتم حفظ البيانات فوراً في قاعدة بيانات SQLite المحلية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">2</div>
+            <div class="step-body">
+              <h3 data-i18n="step2Title">البيع ومسح الباركود</h3>
+              <p data-i18n="step2Desc">في نقطة البيع POS، يمسح التاجر باركود المنتجات بكاميرا الهاتف عبر ML Kit، أو يطلب الزبون المنتجات من التطبيق.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">3</div>
+            <div class="step-body">
+              <h3 data-i18n="step3Title">إصدار الفاتورة وخصم الكمية</h3>
+              <p data-i18n="step3Desc">تُحسب الفاتورة بدقة، وتُخصم الكمية المباعة تلقائياً من المخزون مع رفض البيع في حال عدم كفاية الكمية.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="step-number">4</div>
+            <div class="step-body">
+              <h3 data-i18n="step4Title">المزامنة السحابية والتقارير</h3>
+              <p data-i18n="step4Desc">تتم مزامنة البيانات في الخلفية عبر WorkManager مع Cloud Firestore، مع إمكانية تصدير تقارير Excel للمصاريف والمبيعات.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SPECIFICATIONS SECTION -->
+    <section class="section section-alt" id="technology">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="techEyebrow">للمطورين والمهتمين بالجانب التقني</span>
+          <h2 class="section-title" data-i18n="techTitle">التعريف التقني والبدائل المعمارية</h2>
+          <p class="section-desc" data-i18n="techIntro">بنية برمجية معاصرة ومستقرة تجمع بين أحدث مكتبات Android مع الالتزام بأفضل الممارسات.</p>
+        </div>
+
+        <div class="tech-grid">
+          <div class="card tech-card">
+            <div class="tech-card-header">
+              <span class="tech-icon icon-orange">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+              </span>
+              <h3 data-i18n="techSec1Title">الواجهات والمعمارية (UI & Architecture)</h3>
+            </div>
+            <ul class="tech-list">
+              <li><strong>Kotlin 1.9+ & Java 17:</strong> <span data-i18n="techKotlinDesc">اللغة الأساسية للمشروع مع bytecode بنسخة Java 17.</span></li>
+              <li><strong>Jetpack Compose & Material 3:</strong> <span data-i18n="techComposeDesc">واجهات مستخدم حديثة 100% وديناميكية مع دعم الوضع الداكن والفاتح.</span></li>
+              <li><strong>Clean Layered Architecture:</strong> <span data-i18n="techArchDesc">فصل الطبقات بين المزايا (features)، البيانات (data)، والنواة (core).</span></li>
+              <li><strong>Navigation Compose:</strong> <span data-i18n="techNavDesc">إدارة التنقل بطريقة آمنة برمجياً ودون الاعتماد على XML Views القديمة.</span></li>
+            </ul>
+          </div>
+
+          <div class="card tech-card">
+            <div class="tech-card-header">
+              <span class="tech-icon icon-teal">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              </span>
+              <h3 data-i18n="techSec2Title">قواعد البيانات والمزامنة (Data & Sync)</h3>
+            </div>
+            <ul class="tech-list">
+              <li><strong>SQLite Engine (Offline-First):</strong> <span data-i18n="techSqliteDesc">محرك محلي مخصص لإدارة العمليات بدون اتصال شبكي.</span></li>
+              <li><strong>Cloud Firestore & Storage:</strong> <span data-i18n="techFirestoreDesc">تخزين بيانات المتاجر العامة ومزامنة طلبات الزبائن وصور المنتجات.</span></li>
+              <li><strong>WorkManager (SyncWorker):</strong> <span data-i18n="techWorkDesc">مهام خلفية جارية لمزامنة المبيعات عند توفر الاتصال.</span></li>
+              <li><strong>DataStore Preferences:</strong> <span data-i18n="techDataStoreDesc">حفظ تفضيلات المستخدم وإعدادات أسعار الصرف المحلية.</span></li>
+            </ul>
+          </div>
+
+          <div class="card tech-card">
+            <div class="tech-card-header">
+              <span class="tech-icon icon-gold">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </span>
+              <h3 data-i18n="techSec3Title">العتاد والذكاء الاصطناعي (Hardware & ML)</h3>
+            </div>
+            <ul class="tech-list">
+              <li><strong>CameraX Integration:</strong> <span data-i18n="techCameraDesc">التعامل الكفء مع الكاميرا وإدارة دورة حياتها برمجياً.</span></li>
+              <li><strong>Google ML Kit Barcode:</strong> <span data-i18n="techMlKitDesc">قراءة وتحليل الباركود أوتوماتيكياً في أجزاء من الثانية.</span></li>
+              <li><strong>Apache POI (Excel):</strong> <span data-i18n="techPoiDesc">إنشاء وتنسيق ملفات التقارير (.xlsx) وتخزينها على الهاتف.</span></li>
+              <li><strong>Coil Image Loader:</strong> <span data-i18n="techCoilDesc">تحميل الصور وتخزينها مؤقتاً بأداء عالٍ متوافق مع Compose.</span></li>
+            </ul>
+          </div>
+
+          <div class="card tech-card">
+            <div class="tech-card-header">
+              <span class="tech-icon icon-rose">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/></svg>
+              </span>
+              <h3 data-i18n="techSec4Title">مواصفات البناء والنظام (Build Specs)</h3>
+            </div>
+            <ul class="tech-list">
+              <li><strong>Android SDK Limits:</strong> <span data-i18n="techSdkDesc">Min SDK 26 (Android 8.0)، Target SDK 34، Compile SDK 35.</span></li>
+              <li><strong>Gradle Kotlin DSL:</strong> <span data-i18n="techGradleDesc">إدارة الاعتماديات بملفات Kotlin Script مع Version Catalogs.</span></li>
+              <li><strong>Firebase Auth Rules:</strong> <span data-i18n="techAuthDesc">تأمين حماية بيانات الأدوار (Store, Customer, Delivery).</span></li>
+              <li><strong>Single Module :app:</strong> <span data-i18n="techModuleDesc">وحدة تطبيق رئيسية تضمن سهولة التطوير والصيانة.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle" data-i18n="faqEyebrow">إجابات واستفسارات</span>
+          <h2 class="section-title" data-i18n="faqTitle">الأسئلة الشائعة</h2>
+          <p class="section-desc" data-i18n="faqIntro">إليك الإجابات عن أكثر الأسئلة تكراراً حول كيفية عمل تطبيق BAZAR وآلية التخزين والتصدير.</p>
+        </div>
+
+        <div class="faq-accordion">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span data-i18n="faqQ1">كيف يعمل التطبيق في حالة عدم توفر الاتصال بالإنترنت (Offline Mode)؟</span>
+              <span class="faq-arrow">▼</span>
+            </summary>
+            <div class="faq-answer">
+              <p data-i18n="faqA1">يعتمد التطبيق محلياً على محرك SQLite مخصص، مما يتيح لصاحب المتجر إضافة المنتجات، إجراء المبيعات عبر نقطة البيع POS، وإصدار الفواتير وتسجيل المصاريف بشكل كامل وبسرعة فائقة حتى دون وجود شبكة إنترنت. وعند توفر الاتصال، يقوم محرك WorkManager بمزامنة البيانات سحابياً تلقائياً.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-i18n="faqQ2">كيف يتم التعامل مع سعر صرف الدولار والعملة المحلية؟</span>
+              <span class="faq-arrow">▼</span>
+            </summary>
+            <div class="faq-answer">
+              <p data-i18n="faqA2">يتيح التطبيق لصاحب المتجر تحديد وتحديث سعر صرف الدولار مقابل الليرة السورية بسهولة من الإعدادات أو الشاشة الرئيسية. يتم توحيد هذا السعر في كافة عمليات البيع والفواتير والتقارير لتفادي أي تضارب بين العملتين.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-i18n="faqQ3">كيف تعمل تقنية مسح الباركود عبر الكاميرا؟</span>
+              <span class="faq-arrow">▼</span>
+            </summary>
+            <div class="faq-answer">
+              <p data-i18n="faqA3">يستخدم التطبيق مكتبات Android CameraX مع Google ML Kit Barcode Scanning لقراءة الباركود مباشرة من بث الكاميرا بكسور من الثانية، ثم البحث التلقائي عن المنتج وإضافته لسلة البيع دون الحاجة لماسح باركود خارجي.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-i18n="faqQ4">هل يمكن تصدير التقارير المالية لملفات Excel؟</span>
+              <span class="faq-arrow">▼</span>
+            </summary>
+            <div class="faq-answer">
+              <p data-i18n="faqA4">نعم، يدعم BAZAR إنشاء وتنسيق ملفات تقارير Excel المنسقة بصيغة (.xlsx) مباشرة من الهاتف باستخدام مكتبة Apache POI، مما يتيح لك حفظ ومشاركة تقارير المبيعات والمصاريف بسهولة.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span data-i18n="faqQ5">كيف تتفاعل واجهة الزبون مع مركز التوصيل؟</span>
+              <span class="faq-arrow">▼</span>
+            </summary>
+            <div class="faq-answer">
+              <p data-i18n="faqA5">عندما يرسل الزبون طلباً عبر التطبيق، يتم إدراجه في قاعدة بيانات Cloud Firestore. يستطيع مركز التوصيل رؤية الطلبات المتاحة، قبولها، وتحديث حالتها إلى "قيد التوصيل" أو "تم التسليم" مع إشعار الزبون بالحالة الحية.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY POLICY SECTION -->
+    <section class="section section-alt" id="privacy">
+      <div class="container">
+        <div class="privacy-box">
+          <div class="privacy-header">
+            <span class="section-subtitle" data-i18n="privacyEyebrow">حماية البيانات والأمان</span>
+            <h2 class="privacy-title" data-i18n="privacyTitle">سياسة الخصوصية وأمان البيانات</h2>
+            <p class="privacy-desc" data-i18n="privacyIntro">نحن نلتزم بحماية خصوصية بياناتك ومعلومات متجرك وفق أعلى معايير الأمان.</p>
+          </div>
+
+          <div class="privacy-grid">
+            <div class="privacy-card">
+              <div class="privacy-icon">🔒</div>
+              <h3 data-i18n="priv1Title">التخزين المحلي والأمان</h3>
+              <p data-i18n="priv1Desc">تُحفظ جميع بيانات المبيعات والمخزون الحساسة للمتجر محلياً على هاتفك في قاعدة بيانات SQLite محصنة، ولا تظهر للعامة.</p>
+            </div>
+
+            <div class="privacy-card">
+              <div class="privacy-icon">📷</div>
+              <h3 data-i18n="priv2Title">إذونات العتاد (الكاميرا)</h3>
+              <p data-i18n="priv2Desc">تُستخدم الكاميرا حصرياً لغرض مسح الباركود عبر ML Kit أثناء البيع، ولا يتم تسجيل أو حفظ أو مشاركة أي مقاطع فيديو أو صور شخصية.</p>
+            </div>
+
+            <div class="privacy-card">
+              <div class="privacy-icon">☁️</div>
+              <h3 data-i18n="priv3Title">الخدمات السحابية Firebase</h3>
+              <p data-i18n="priv3Desc">تُستخدم خدمات Firebase Authentication وCloud Firestore لتأمين تسجيل الدخول، عرض المتاجر العامة للزبائن، ومتابعة الطلبات بقواعد حماية صارمة.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD SECTION -->
+    <section class="section" id="download">
+      <div class="container">
+        <div class="download-box">
+          <div class="download-info">
+            <span class="section-subtitle" data-i18n="downloadEyebrow">نسخة تجريبية جاهزة</span>
+            <h2 class="download-title" data-i18n="downloadTitle">جرب تطبيق BAZAR الآن على هاتفك</h2>
+            <p class="download-desc" data-i18n="downloadIntro">حمّل حزمة APK واستكشف أدوات إدارة المتجر وسرعة نقاط البيع والعمل دون اتصال.</p>
+
+            <div class="download-cta">
+              <a class="btn btn-primary btn-lg" href="app/BAZAR.apk" download>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="downloadButton">تنزيل حزمة APK</span>
+              </a>
+            </div>
+
+            <div class="download-disclaimer">
+              <strong data-i18n="releaseWarning">تنبيه تقني:</strong>
+              <span data-i18n="releaseNote">هذه نسخة Debug تجريبية لمعاينة الوظائف وليست النسخة النهائية المخصصة للنشر الرسمي على المتجر.</span>
+            </div>
+          </div>
+
+          <div class="download-card-preview">
+            <img class="download-app-icon" src="assets/app-icon.png" alt="BAZAR App Icon" width="96" height="96" data-i18n-alt="iconAlt">
+            <h4>BAZAR Android</h4>
+            <span class="download-version" data-i18n="versionValue">v1.0 (Debug Build)</span>
+
+            <div class="specs-table">
+              <div class="spec-row"><span data-i18n="systemLabel">النظام</span><span>Android 8.0+</span></div>
+              <div class="spec-row"><span data-i18n="fileLabel">الملف</span><span>APK</span></div>
+              <div class="spec-row"><span data-i18n="archLabel">المعمارية</span><span>Clean Architecture</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="assets/app-icon.png" alt="BAZAR Logo" width="32" height="32">
+        <span>BAZAR — <small data-i18n="brandTagline">إدارة المتاجر</small></span>
+      </div>
+      <p class="footer-text" data-i18n="footerTagline">أدوات عملية وشاملة من قلب السوق.</p>
+      <a class="back-to-top" href="#home"><span data-i18n="backTop">إلى الأعلى</span> ↑</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
