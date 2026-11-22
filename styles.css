@@ -292,6 +292,10 @@ html[data-theme="dark"] .site-header {
   transform: translateY(-1px);
 }
 
+.mobile-download-icon {
+  display: none;
+}
+
 /* BUTTONS SYSTEM */
 .btn {
   display: inline-flex;
@@ -2328,15 +2332,62 @@ html[data-theme="dark"] .site-header {
 
 @media (max-width: 768px) {
   .section {
-    padding-block: 64px;
+    padding-block: 56px;
   }
 
   .site-header {
-    height: 72px;
+    height: auto;
+  }
+
+  .header-container {
+    height: auto;
+    min-height: 72px;
+    padding-block: 10px;
   }
 
   .main-nav {
     display: none;
+  }
+
+  .section-header {
+    margin-bottom: 36px;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 4vw, 2.125rem);
+  }
+
+  .section-desc,
+  .panel-info p,
+  .panel-features li,
+  .feature-card p,
+  .role-card p,
+  .step-body p,
+  .tech-list li,
+  .faq-answer,
+  .privacy-card p,
+  .download-desc {
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .panel-content {
+    padding: 24px 18px;
+    gap: 24px;
+  }
+
+  .btn {
+    min-height: 48px;
+    height: auto;
+    padding-block: 12px;
+  }
+
+  .screen-tab {
+    min-height: 48px;
+    height: auto;
   }
 
   .strip-grid {
@@ -2360,5 +2411,299 @@ html[data-theme="dark"] .site-header {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .section {
+    padding-block: 48px;
+  }
+
+  .header-container {
+    gap: 8px;
+    padding-inline: 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .language-picker select {
+    max-width: 82px;
+    height: 44px;
+    padding-inline: 8px;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .theme-toggle .theme-label,
+  .btn-download-sm span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .btn-download-sm {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+  }
+
+  .mobile-download-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex: none;
+  }
+
+  .hero-section {
+    padding-block: 48px 56px;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.875rem, 8vw, 2.25rem);
+  }
+
+  .hero-description {
+    margin-bottom: 24px;
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 7vw, 2rem);
+  }
+
+  .section-desc,
+  .panel-info p,
+  .panel-features li,
+  .feature-card p,
+  .role-card p,
+  .step-body p,
+  .tech-list li,
+  .faq-answer,
+  .privacy-card p,
+  .download-desc {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .app-card-preview {
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .screen-tabs {
+    gap: 8px;
+  }
+
+  .screen-tab {
+    flex: 1 1 calc(50% - 8px);
+    justify-content: center;
+    padding-inline: 10px;
+    font-size: 0.9375rem;
+    text-align: center;
+  }
+
+  .panel-content {
+    padding: 16px 12px;
+    gap: 20px;
+  }
+
+  .panel-info h3 {
+    font-size: 1.375rem;
+  }
+
+  .compose-phone-render {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .strip-text strong {
+    font-size: 1rem;
+  }
+
+  .strip-text span {
+    font-size: 0.875rem;
+  }
+
+  .cards-grid,
+  .roles-grid,
+  .timeline,
+  .tech-grid {
+    gap: 16px;
+  }
+
+  .feature-card h3,
+  .role-card h3,
+  .step-body h3,
+  .tech-card-header h3,
+  .privacy-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .faq-question {
+    min-height: 52px;
+    padding: 15px 16px;
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    padding-inline: 16px;
+  }
+
+  .privacy-box {
+    padding: 22px 16px;
+    gap: 24px;
+  }
+
+  .privacy-grid {
+    gap: 16px;
+  }
+
+  .privacy-card {
+    padding: 20px;
+  }
+
+  .download-box {
+    padding: 22px 16px;
+    gap: 24px;
+  }
+
+  .download-title {
+    font-size: clamp(1.75rem, 7vw, 2.125rem);
+  }
+
+  .download-card-preview {
+    padding: 24px 18px;
+  }
+
+  .spec-row {
+    gap: 12px;
+    font-size: 0.875rem;
+  }
+
+  .back-to-top {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 8px;
+  }
+
+  .compose-phone-render .mock-subtle,
+  .compose-phone-render .mock-rate-required,
+  .mock-pos-screen .tool-btn,
+  .sale-product-main strong,
+  .sale-product-main span,
+  .mock-pos-screen .product-sale-price,
+  .mock-store-screen .action-card,
+  .mock-store-screen .exchange-title,
+  .mock-store-screen .exchange-rate-text,
+  .mock-store-screen .exchange-edit-hint,
+  .mock-section-heading > span,
+  .mock-stock-pill,
+  .mock-rate-note,
+  .mock-product-card > strong,
+  .mock-product-price,
+  .mock-orders-indicator,
+  .mock-category-chip,
+  .mock-store-online,
+  .mock-store-copy strong,
+  .mock-store-copy > span,
+  .mock-store-rating,
+  .mock-customer-screen .nav-item,
+  .mock-welcome-card span,
+  .mock-delivery-screen .stat-label,
+  .mock-delivery-action strong,
+  .mock-form-field small,
+  .mock-form-field b,
+  .mock-save-button,
+  .mock-signout {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .mock-pos-screen .tool-btn,
+  .mock-pos-screen .compose-finalize-btn,
+  .mock-form-field,
+  .mock-save-button {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding-inline: 12px;
+  }
+
+  .header-container {
+    padding-inline: 12px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .language-picker select {
+    max-width: 76px;
+    padding-inline: 6px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .panel-content {
+    padding-inline: 10px;
+  }
+
+  .screen-tab {
+    font-size: 0.875rem;
   }
 }
